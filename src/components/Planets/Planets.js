@@ -4,10 +4,6 @@ export default class Planets extends Component {
 
     render() {
 
-        const purpleTxt = {
-            color: '#9933cc'
-        }
-
         const stlImg = {
             width: '60vh',
             height: '60vh'
@@ -19,16 +15,16 @@ export default class Planets extends Component {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" className="card-img-top" style={stlImg} alt="Image planet"></img>
                 </div>
                 <div className="card-body d-flex align-self-center flex-column text-uppercase">
-                    <h4 className="card-title font-weight-bold text-center" style={purpleTxt}>Name planet</h4>
+                    <h4 className="card-title font-weight-bold text-center text-info" >Name planet</h4>
                     <ul className="navbar-nav mr-auto" style={{fontSize: '3.5vh'}}>
                         <li className="nav-item">
-                            <span className="nav-link" href="#">Diameter: <span style={purpleTxt} className='font-weight-bold'>42</span></span>
+                            <span className="nav-link" href="#">Diameter: <span className='font-weight-bold text-info'>42</span></span>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" href="#">Population: <span style={purpleTxt} className='font-weight-bold'>42</span></span>
+                            <span className="nav-link" href="#">Population: <span className='font-weight-bold text-info'>42</span></span>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" href="#">Rotation period: <span style={purpleTxt} className='font-weight-bold'>42</span></span>
+                            <span className="nav-link" href="#">Rotation period: <span className='font-weight-bold text-info'>42</span></span>
                         </li>
                     </ul>
                </div>
