@@ -10,7 +10,7 @@ export default class Starships extends Component {
         }
 
         return (
-            <div className="card border-info col-7 d-flex flex-row" style={{ maxWidth: '55rem' }}>
+            <div className="card border-info col-7 d-flex flex-row m-2" style={{ maxWidth: '55rem' }}>
                 <div className="card-body d-flex align-self-center flex-column text-uppercase">
                     <h4 className="card-title font-weight-bold text-center text-info">Name ship</h4>
                     <ul className="navbar-nav mr-auto" style={{fontSize: '3.5vh'}}>

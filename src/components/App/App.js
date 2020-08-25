@@ -6,12 +6,15 @@ import Starships from '../Starships/Starships';
 import Persons from '../Persons/Persons';
 
 function App() {
+
   return (
     <div className="App">
       <Header />
-      <Planets />
-      <Starships />
-      <Persons />
+      <div className='d-flex flex-column align-items-center'>
+        <Planets />
+        <Starships />
+        <Persons />
+      </div>
     </div>
   );
 }

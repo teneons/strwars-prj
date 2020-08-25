@@ -10,7 +10,7 @@ export default class Planets extends Component {
         }
 
         return (
-            <div className="card border-info col-7 d-flex flex-row" style={{ maxWidth: '55rem' }}>
+            <div className="card border-info col-7 d-flex flex-row m-2" style={{ maxWidth: '55rem' }}>
                 <div className='col-6'>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" className="card-img-top" style={stlImg} alt="Image planet"></img>
                 </div>
