@@ -40,10 +40,10 @@ export default class SwapiClss {
 
 
   //just request
-  const swapiRequest = new SwapiClss();
-  swapiRequest.getAllStarships().then((rqData)=>{
-    console.log(rqData)
-  })
+  // const swapiRequest = new SwapiClss();
+  // swapiRequest.getAllStarships().then((rqData)=>{
+  //   console.log(rqData)
+  // })
 
 
 
