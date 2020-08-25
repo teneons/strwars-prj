@@ -14,11 +14,12 @@ export default class SwapiClss {
 
     async getAllPeoples() {
       const resultArr = await this.getSwapiData(`/people/`)
-      return resultArr.results
+      return resultArr.results.map(this._tranformPlanets)
     }
 
-    getPeople(id) {
-      return this.getSwapiData(`/people/${id}/`)
+    async getPeople(id) {
+      const planet = await this.getSwapiData(`/people/${id}/`);
+      return this._tranformPlanets(planet)
     }
 
     getAllPlanets() {
@@ -35,6 +36,19 @@ export default class SwapiClss {
 
     getStarship(id) {
       return this.getSwapiData(`/starships/${id}/`)
+    }
+
+    _tranformPlanets (d) {
+      const regExpID = /\/([0-9]*)\/$/;
+      const id = d.url.match(regExpID)[1]
+
+      return {
+            id,
+            planetName: d.name,
+            diameter: d.diameter,
+            population: d.population,
+            rotationPeriod: d.rotation_period
+        }
     }
   }
 
