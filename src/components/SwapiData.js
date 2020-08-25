@@ -38,12 +38,15 @@ export default class SwapiClss {
       return this.getSwapiData(`/starships/${id}/`)
     }
 
-    _tranformPlanets (d) {
+    _getIdFromURL (d) {
       const regExpID = /\/([0-9]*)\/$/;
-      const id = d.url.match(regExpID)[1]
+      return d.url.match(regExpID)[1]
+    }
+
+    _tranformPlanets (d) {
 
       return {
-            id,
+            id: this._getIdFromURL(d),
             planetName: d.name,
             diameter: d.diameter,
             population: d.population,
