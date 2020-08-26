@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 
 import SwapiData from '../SwapiData'
-import { buildQueries } from '@testing-library/react';
+import Loader from './Loader';
 //import Loader from './Loader'
 
 export default class Planets extends Component {
     state = {
         d: null,
         loadStatus: true,
-        catchEr: false
+        catchErr: false,
+        txtErr: null
     }
     constructor() {
         super();
@@ -16,7 +17,7 @@ export default class Planets extends Component {
     }
 
     catchError = () => {
-        this.setState({catchEr: true, loadStatus: true})
+        this.setState({catchErr: true, loadStatus: false})
     }
 
     swapiData = new SwapiData()
@@ -26,7 +27,7 @@ export default class Planets extends Component {
         this.swapiData.getPlanet(id).then(d => {
             this.setState({
               d: d})
-        }).then(()=>console.log(this.state)).then(() => this.setState({ loadStatus: false }))
+        }).then(() => this.setState({ loadStatus: false }))
             .catch(this.catchError)
     }
 
@@ -40,15 +41,13 @@ export default class Planets extends Component {
         if (this.state.loadStatus) {
             //<Loader />
             return (
-                <div className="progress">
-                    <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style={{ width: "100%" }}></div>
-                </div>
+                <h3>loading</h3>
             )
         }
 
         //cath error
-        if(this.state.catchEr) {
-            return <h3>Error loading</h3>
+        if(this.state.catchErr) {
+            return <h3>Error</h3>
         }
 
         return (
