@@ -2,7 +2,7 @@ export default class SwapiClss {
     _apiUrl = `https://swapi.dev/api`;
 
     //method - get data
-    async getSwapiData (urlAttributes) {
+    getSwapiData = async (urlAttributes) => {
       const dataS = await fetch(`${this._apiUrl}${urlAttributes}`)
     
       if(!dataS.ok) {
@@ -12,32 +12,32 @@ export default class SwapiClss {
       return await dataS.json();
     }
 
-    // async getAllPlanets() {
-    //   const resultArr = await this.getSwapiData(`/planets/`);
-    //   return resultArr.result.map(this._tranformPlanets)
-    // }
+    getAllPlanets = async () => {
+      const resultArr = await this.getSwapiData(`/planets/`);
+      return resultArr.result.map(this._tranformPlanets)
+    }
 
-    async getPlanet(id) {
+    getPlanet = async (id) => {
       const planet = await this.getSwapiData(`/planets/${id}/`);
       return this._tranformPlanets(planet)
     }
 
-    // async getAllStarships() {
-    //   const resultArr = await this.getSwapiData(`/starships/`)
-    //   return resultArr.results.map(this._transformStarships)
-    // }
+    getAllStarships = async () => {
+      const resultArr = await this.getSwapiData(`/starships/`)
+      return resultArr.results.map(this._transformStarships)
+    }
 
-    async getStarship(id) {
+    getStarship = async (id) => {
       const starShip = await this.getSwapiData(`/starships/${id}/`);
       return this._transformStarships(starShip)
     }
 
-    // async getAllPeoples() {
-    //   const resultArr = await this.getSwapiData(`/people/`)
-    //   return resultArr.results.map(this._tranformPlanets)
-    // }
+    getAllPeoples = async () => {
+      const resultArr = await this.getSwapiData(`/people/`)
+      return resultArr.results.map(this._tranformPlanets)
+    }
 
-    async getPeople(id) {
+    getPeople = async (id) => {
       const people = await this.getSwapiData(`/people/${id}/`);
       return this._tranformPeoples(people)
     }
