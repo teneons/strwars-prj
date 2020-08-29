@@ -21,7 +21,7 @@ export default class Planets extends Component {
     }
 
     swapiData = new SwapiData()
-    planetsUpdate() {
+    planetsUpdate = () => {
         const id = Math.floor(Math.random() * 21) + 2;
 
         this.swapiData.getPlanet(id).then(d => {

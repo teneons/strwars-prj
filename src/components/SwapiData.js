@@ -34,7 +34,7 @@ export default class SwapiClss {
 
     getAllPeoples = async () => {
       const resultArr = await this.getSwapiData(`/people/`)
-      return resultArr.results.map(this._tranformPlanets)
+      return resultArr.results.map(this._tranformPeoples)
     }
 
     getPeople = async (id) => {
