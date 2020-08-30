@@ -34,7 +34,9 @@ export default class SwapiClss {
 
     getAllPeoples = async () => {
       const resultArr = await this.getSwapiData(`/people/`)
-      return resultArr.results.map(this._tranformPeoples)
+      return resultArr.results.map((d)=>{
+        return {personName: d.name}
+      })    //this._tranformPeoples
     }
 
     getPeople = async (id) => {
@@ -72,7 +74,7 @@ export default class SwapiClss {
     _tranformPeoples (d) {
       return {
         id: this._getIdFromURL(d),
-        peopleName: d.name
+        personName: d.name
       }
     }
   }
