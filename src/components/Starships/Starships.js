@@ -1,12 +1,49 @@
 import React, { Component } from 'react'
 
+import SwapiData from '../SwapiData'
+import Loader from '../Loader/Loader'
+
 export default class Starships extends Component {
+    state = {
+        dataSShips: null,
+        statusLoad: true,
+        statusErr: false,
+    }
+
+    constructor() {
+        super();
+        this.starShipsGetData();
+    }
+
+    swapiGetData = new SwapiData()  //init connect
+    //star ship func.
+    starShipsGetData = () => {
+        const id = Math.floor(Math.random() * 21) + 2;  //gener id
+
+        this.SwapiData.getStarship(id)
+            .then(d => this.setState({dataSShips: d}))
+            .then(()=> this.setState({statusLoad: false}))
+            .catch(this.catchError)
+    }
+
+    //prosessing error
+    catchError = () => {
+        this.setState({statusErr: true, statusLoad: false})
+    }
 
     render() {
-
         const stlImg = {
             width: '60vh',
             height: '60vh'
+        }
+
+        //show loader
+        if(this.state.statusLoad) {
+            return <Loader />
+        }
+        //show error
+        if(this.state.statusErr) {
+            return <h3>ERROR</h3>
         }
 
         return (
