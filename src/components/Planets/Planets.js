@@ -24,9 +24,8 @@ export default class Planets extends Component {
         const id = Math.floor(Math.random() * 21) + 2;
 
         this.swapiData.getPlanet(id).then(d => {
-            this.setState({
-              d: d})
-        }).then(() => this.setState({ loadStatus: false }))
+            this.setState({d: d})})
+            .then(() => this.setState({ loadStatus: false }))
             .catch(this.catchError)
     }
 
