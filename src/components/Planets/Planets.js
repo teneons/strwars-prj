@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 
 import SwapiData from '../SwapiData'
-import Loader from './Loader';
-//import Loader from './Loader'
+import Loader from '../Loader/Loader';
 
 export default class Planets extends Component {
     state = {
@@ -39,10 +38,7 @@ export default class Planets extends Component {
 
         //show loader
         if (this.state.loadStatus) {
-            //<Loader />
-            return (
-                <h3>loading</h3>
-            )
+            return <Loader />
         }
 
         //cath error
