@@ -63,7 +63,7 @@ export default class Starships extends Component {
                     </ul>
                </div>
                <div className='col-6'>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" className="card-img-top" style={stlImg} alt="Image planet"></img>
+                    <img src={`https://starwars-visualguide.com/assets/img/starships/${this.state.dataSShips.id}.jpg`} className="card-img-top" style={stlImg} alt="Image planet"></img>
                 </div>
             </div>
         )
