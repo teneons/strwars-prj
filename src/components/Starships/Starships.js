@@ -20,7 +20,7 @@ export default class Starships extends Component {
     starShipsGetData = () => {
         const id = Math.floor(Math.random() * 21) + 2;  //gener id
 
-        this.SwapiData.getStarship(id)
+        this.swapiGetData.getStarship(id)
             .then(d => this.setState({dataSShips: d}))
             .then(()=> this.setState({statusLoad: false}))
             .catch(this.catchError)
@@ -49,16 +49,16 @@ export default class Starships extends Component {
         return (
             <div className="card border-info col-7 d-flex flex-row m-2" style={{ maxWidth: '55rem' }}>
                 <div className="card-body d-flex align-self-center flex-column text-uppercase">
-                    <h4 className="card-title font-weight-bold text-center text-info">Name ship</h4>
+                        <h4 className="card-title font-weight-bold text-center text-info">{this.state.dataSShips.shipName}</h4>
                     <ul className="navbar-nav mr-auto" style={{fontSize: '3.5vh'}}>
                         <li className="nav-item">
-                            <span className="nav-link" href="#">Model: <span className='font-weight-bold text-info'>42</span></span>
+                            <span className="nav-link" href="#">Model: <span className='font-weight-bold text-info'>{this.state.dataSShips.shipName}</span></span>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" href="#">Length: <span className='font-weight-bold text-info'>42</span></span>
+                            <span className="nav-link" href="#">Length: <span className='font-weight-bold text-info'>{this.state.dataSShips.shipLength}</span></span>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" href="#">Passengers: <span className='font-weight-bold text-info'>42</span></span>
+                            <span className="nav-link" href="#">Passengers: <span className='font-weight-bold text-info'>{this.state.dataSShips.shipPassengers}</span></span>
                         </li>
                     </ul>
                </div>
