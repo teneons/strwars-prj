@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Header from '../Header/Header';
-import CardBox from '../CardBox/CardBox';
+import Planets from '../Planets/Planets';
+import Starships from '../Starships/Starships';
 import Persons from '../Persons/Persons';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <Header />
       <div className='d-flex flex-column align-items-center'>
-        <CardBox />
+        <Planets />
+        <Starships />
         <Persons />
       </div>
     </div>

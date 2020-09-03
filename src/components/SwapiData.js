@@ -53,21 +53,21 @@ export default class SwapiClss {
     //transforms
     _tranformPlanets (d) {
       return {
-            id: this._getIdFromURL(d),
-            planetName: d.name,
-            diameter: d.diameter,
-            population: d.population,
-            orbitalPeriod: d.orbital_period
-        }
+        id: this._getIdFromURL(d),
+        name: d.name,
+        p1: d.diameter,
+        p2: d.population,
+        p3: d.orbital_period
+      }
     }
 
     _transformStarships (d) {
       return {
         id: this._getIdFromURL(d),
-        shipName: d.name,
-        shipModel: d.model,
-        shipLength: d.length,
-        shipPassengers: d.passengers
+        name: d.name,
+        p1: d.model,
+        p2: d.length,
+        p3: d.passengers
       }
     }
 
