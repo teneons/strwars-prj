@@ -1,8 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import SwapiData from '../SwapiData'
-import Loader from '../Loader/Loader'
+import CardBox from '../CardBox/CardBox'
 
+function Starships () {
+    const swapiD = new SwapiData()
+    const id = Math.floor(Math.random() * 21) + 2;  //gener id
+
+    return <CardBox swapiMethot={swapiD.getStarship(id)} txtFields={['Model:', 'Length:', 'Passengers:']} imgUrl={'https://starwars-visualguide.com/assets/img/starships/'} />
+}
+
+export default Starships
+
+/*
 export default class Starships extends Component {
     state = {
         dataSShips: null,
@@ -69,3 +79,4 @@ export default class Starships extends Component {
         )
     }
 }
+*/
