@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import SwapiData from '../SwapiData'
 import Loader from '../Loader/Loader'
+import Err from '../Err/Err'
 
 class CatchError extends Component {
     state = {
@@ -14,7 +15,7 @@ class CatchError extends Component {
 
     render() {
         if(this.state.statusErr) {
-            return <h3>ERROR</h3>
+            return <Err />
         }
         return this.props.children
     }
