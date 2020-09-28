@@ -10,8 +10,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Router>
+      <Header />
       <div className='d-flex flex-column align-items-center'>
         <Route path='/planets' component={Planets} />
         <Route path='/sships' component={Starships} />
