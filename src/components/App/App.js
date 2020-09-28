@@ -11,11 +11,13 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Router>
       <div className='d-flex flex-column align-items-center'>
-        <Planets />
-        <Starships />
-        <Persons />
+        <Route path='/planets' component={Planets} />
+        <Route path='/sships' component={Starships} />
+        <Route path='/persons' component={Persons} />
       </div>
+      </Router> 
     </div>
   );
 }
