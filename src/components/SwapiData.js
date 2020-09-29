@@ -74,7 +74,12 @@ export default class SwapiClss {
     _tranformPeoples (d) {
       return {
         id: this._getIdFromURL(d),
-        personName: d.name
+        personName: d.name,
+        personGender: d.gender,
+        personHeight: d.height,
+        personMass: d.mass,
+        personHeirColor: d.hair_color,
+        personEye: d.eye,
       }
     }
   }
