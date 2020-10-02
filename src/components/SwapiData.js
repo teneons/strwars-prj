@@ -6,7 +6,7 @@ export default class SwapiClss {
       const dataS = await fetch(`${this._apiUrl}${urlAttributes}`)
     
       if(!dataS.ok) {
-        throw new Error ('Error - ', dataS.status)
+        throw new Error ();
       }
 
       return await dataS.json();
